@@ -1,4 +1,5 @@
-recent_purchase = [36.13, 23.87, 183.35, 22.93, 11.62]
+#recent_purchase = [36.13, 23.87, 183.35, 22.93, 11.62]
+recent_purchase = []
 
 budget = 150
 total_spent = 0
@@ -9,3 +10,6 @@ for purchase in recent_purchase:
         print("This purchase is over budget: ", purchase)
     else:
         print("This purchase is within budget: ", purchase)
+
+#def check_budget (purchase, limit):
+    
