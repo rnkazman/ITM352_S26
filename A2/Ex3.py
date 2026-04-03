@@ -60,18 +60,6 @@ def display_initial_rows(dataframe):
         print("Invalid input. Please try again.")
 
 
-def display_menu(dataframe):
-    menu_options = (
-        ("show the first n rows of sales data", display_initial_rows),
-        ("Show the number of employees by region", show_employees_by_region),
-        ("Exit", exit_program)      
-    )
-
-    print("Available options:")
-    for i, (description, _) in enumerate(menu_options, start=1):
-        print(f"{i}. {description}")
-
-
 # Call load_csv to load the data and print the first 10 rows
 #filename = "https://drive.google.com/uc?id=1ujY0WCcePdotG2xdbLyeECFW9lCJ4t-K"
 filename = "sales_data_test.csv"
@@ -82,7 +70,7 @@ sales_data = load_csv(filename)
 def main():
     while True:
         print("Sales Data Dashboard")
-        display_menu(sales_data)
+        display_initial_rows(sales_data)
 
 # Check if this is the main module being run
 if __name__ == "__main__":
