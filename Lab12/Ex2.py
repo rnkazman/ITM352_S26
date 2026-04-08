@@ -4,7 +4,6 @@ import pandas as pd
 import urllib.request
 import lxml
 
-
 url = "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202603"
 
 # Open the URL and use read_html to read the data into a DataFrame
@@ -22,6 +21,9 @@ print("Column names in the DataFrame:")
 print(data_frame[0].columns)
 
 # Extract the 1 month interest rate data
-one_month_rate = data_frame[0].loc[0, "1 Mo"]
-print(f"1 month interest rate on 2026-03-01: {one_month_rate}")
+int_rate_table = data_frame[0]  # Assuming the first table is the one we want
 
+# Print the table of 1 month interest rates
+print("\n1 Month Treasury Rates:\n")
+for index, row in int_rate_table.iterrows():
+    print(f"Index: {index}, Date: {row['Date']}, 1 Month Rate: {row['1 Mo']}")
