@@ -1,3 +1,7 @@
+# Ask for a sentence from the user (using input()).  Turn 
+# the sentence into a list of strings. Reverse the list.  
+# Join the reversed list back into a string.
+
 sentence = input("Enter a sentence: ")
 
 # 1. Turn string into a list of words

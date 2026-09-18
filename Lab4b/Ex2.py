@@ -1,3 +1,4 @@
+# Properly format a name in title case
 raw_name = input("Enter your full name: ")
 
 title_name = raw_name.strip().title()
