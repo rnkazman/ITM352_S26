@@ -1,0 +1,59 @@
+# Bainomugisha Nature Park - Backend Requirements
+# Install with: pip install -r requirements-bnp.txt
+
+# Core Web Framework
+Flask==2.3.3
+Flask-CORS==4.0.0
+Flask-Migrate==4.0.5
+
+# Database and ORM
+SQLAlchemy==2.0.21
+Flask-SQLAlchemy==3.0.5
+psycopg2-binary==2.9.7  # PostgreSQL adapter
+GeoAlchemy2==0.14.1     # PostGIS spatial extension
+
+# Authentication & Security
+Flask-JWT-Extended==4.5.2
+Werkzeug==2.3.7
+bcrypt==4.0.1
+
+# Real-time Communication
+Flask-SocketIO==5.3.6
+python-socketio==5.8.0
+
+# Caching and Message Queue
+redis==4.6.0
+celery==5.3.4
+
+# API Documentation
+Flask-RESTX==1.1.0
+marshmallow==3.20.1
+
+# File Handling & Image Processing
+Pillow==10.0.0
+boto3==1.28.62  # AWS S3 for photo storage
+
+# Push Notifications
+firebase-admin==6.2.0
+
+# Environment and Configuration
+python-dotenv==1.0.0
+
+# Utilities
+requests==2.31.0
+python-dateutil==2.8.2
+uuid==1.30
+
+# Development & Testing
+pytest==7.4.2
+pytest-flask==1.2.0
+black==23.7.0
+flake8==6.1.0
+
+# Geographic Data Processing (for park zones)
+Shapely==2.0.1
+geojson==3.0.1
+
+# Data Analysis (for crowd analysis, building on existing patterns)
+pandas==2.1.1
+numpy==1.24.3
