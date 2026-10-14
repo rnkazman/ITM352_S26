@@ -1,5 +1,5 @@
-celebs = ("Taylor Swift", "Lionel Messi", "The Weeknd", "Keanu Reeves", "Agnelina Jolie")
-ages = (36, 38, 36, 61, 50)
+celebs = ("Taylor Swift", "Cristiano Ronaldo", "The Weeknd", "Trevor Noah", "Dua Lipa")
+ages = (36, 41, 36, 42, 31)
 
 celebs_list = []
 ages_list = []
