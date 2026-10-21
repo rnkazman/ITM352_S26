@@ -4,7 +4,8 @@
 
 import csv
 
-filename = "..\\taxi_1000.csv"
+filename = "../taxi_1000.csv"
+# On Windows use: filename = "..\\taxi_1000.csv"
 with open(filename) as csvfile:
     csv_reader = csv.reader(csvfile)
 
