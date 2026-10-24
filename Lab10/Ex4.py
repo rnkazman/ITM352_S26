@@ -3,7 +3,7 @@
 import json
 import pandas as pd
 
-taxi_df = pd.read_json("Taxi_Trips.json")
+taxi_df = pd.read_json("../Taxi_Trips.json")
 print(taxi_df.describe())
 
 print(taxi_df.head(8))
