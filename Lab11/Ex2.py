@@ -4,10 +4,12 @@
 import pandas as pd
 import numpy as np
 import pyarrow
+import ssl
 
 filename = "https://drive.google.com/uc?id=1ujY0WCcePdotG2xdbLyeECFW9lCJ4t-K"
 
 pd.set_option('display.max_columns', None)  # Show all columns in the output
+ssl._create_default_https_context = ssl._create_unverified_context
 
 df = pd.read_csv(filename, engine='pyarrow')
 df['order_date'] = pd.to_datetime(df['order_date'], format='%m/%d/%Y', errors='coerce')  # Convert order_date to datetime, coercing errors to NaT

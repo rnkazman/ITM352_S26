@@ -33,6 +33,6 @@ print("After dropping 0 sales:")
 df_big_properties = df_big_properties[df_big_properties["sale_price"] > 0]
 print(df_big_properties.head(10))
 
-# caldulate the average sale price per square foot for the big properties
+# caldulate the average sale price for the big properties
 average_price = df_big_properties["sale_price"].mean()
 print(f"The mean sales price for the big properties is ${average_price:.2f}")
