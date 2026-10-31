@@ -1,13 +1,13 @@
 # Read in a  file from a URL and save a local CSV file with the first 10 rows.
 # 
-
 import time
-
+import ssl
 import pandas as pd
 import numpy as np
 import pyarrow
 
-
+# Temporary fix (for SSL certificate verification issues)
+ssl._create_default_https_context = ssl._create_unverified_context
 pd.set_option('display.max_columns', None)  # Show all columns in the output
 
 
@@ -35,14 +35,34 @@ def load_csv(filepath):
 
         return df
     
-    except Exception as e:
-        print(f"Error loading CSV file: {e}")
+    except FileNotFoundError:
+        print(f"Error: The file '{file_path}' was not found.")
         return None
 
+    except pd.errors.EmptyDataError:
+        print(f"Error: The file '{file_path}' is empty.")
+        return None
+
+    except pd.errors.ParserError as e:
+        print(f"Error: There was an issue parsing the CSV file:")
+        print(str(e))
+        return None
+
+    except Exception as e:
+        print(f"An unexpected error occurred:")
+        print(str(e))
+        return None
+    
 
 # Call load_csv to load the data and print the first 10 rows
 filename = "https://drive.google.com/uc?id=1ujY0WCcePdotG2xdbLyeECFW9lCJ4t-K"
 #filename = "sales_data_test.csv"
 sales_data = load_csv(filename)
 
-print(sales_data.head(10))
+# Check if the DataFrame was created successfully
+if sales_data is not None:
+    print("\nFirst few rows of the data:")
+    print(sales_data.head())
+    
+    print("\nDataFrame info:")
+    print(sales_data.info())

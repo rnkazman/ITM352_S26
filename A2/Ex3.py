@@ -2,13 +2,14 @@
 # 
 
 import time
-
+import ssl
 import pandas as pd
 import numpy as np
 import pyarrow
 
-
-pd.set_option('display.max_columns', None)  # Show all columns in the output
+# Temporary fix (for SSL certificate verification issues)
+ssl._create_default_https_context = ssl._create_unverified_context
+#pd.set_option('display.max_columns', None)  # Show all columns in the output
 
 
 def load_csv(filepath):
