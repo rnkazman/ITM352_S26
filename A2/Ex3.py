@@ -1,4 +1,5 @@
-# Read in a  file from a URL and save a local CSV file with the first 10 rows.
+# Allow users to interactively explore and analyze sales data from a CSV file by providing 
+# a simple command-line interface for user interaction.
 # 
 
 import time
@@ -22,9 +23,8 @@ def load_csv(filepath):
         print(f"CSV file loaded succesfully in {load_time:.2f} seconds.")
         print(f"number of rows: {len(df)}")
         print(f"Columns: {df.columns.tolist()}")
-        df['order_date'] = pd.to_datetime(df['order_date'], format='%m/%d/%Y', errors='coerce')  # Convert order_date to datetime, coercing errors to NaT
-#        df.fillna(0, inplace=True)  # Fill NaN values with 0 for numeric columns
-        df['sales'] = df['quantity'] * df['unit_price']  # Create a new 'sales' column as quantity * unit_price
+        df['order_date'] = pd.to_datetime(df['order_date'], format='%m/%d/%Y', errors='coerce')  # Convert order_date to datetime, coercing errors
+        df['sales'] = df['quantity'] * df['unit_price']  # Create a new 'sales' column 
 
         required_columns = ['quantity', 'unit_price', 'order_date']
         # Check if required columns are present
