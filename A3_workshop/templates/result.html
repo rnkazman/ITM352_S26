@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Your Quiz Result</h1>
-    <p>Your score: {{ score }} out of 5</p>
+    <p>Your score: {{ score }} out of {{ max_questions }}</p>
     <a href="{{ url_for('home') }}">Take Quiz Again</a>
 </body>
 </html>

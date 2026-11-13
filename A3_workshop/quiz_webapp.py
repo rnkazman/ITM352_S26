@@ -47,7 +47,9 @@ def quiz():
                                    question_number=question_number,
                                    options=questions[question_number]['options']  ) 
         else:            
-            return redirect(url_for('result'))
+            return render_template('result.html', 
+                                   score=score, 
+                                   max_questions=max_questions)  # Display the result page with the score
     else:
         # Load the question and options to display
         question_number = 0    # Reset question number for each quiz attempt
