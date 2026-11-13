@@ -31,8 +31,9 @@ def run_quiz(questions):
 
 
 @app.route("/")
-def home() -> str:
+def home():
     return render_template("index.html")
+
 
 @app.route('/quiz', methods=['GET', 'POST'])
 def quiz():
@@ -59,7 +60,7 @@ if __name__ == "__main__":
    questions = [
    {
        "question": "What is the capital of France?",
-       "options": ["London", "Berlin", "Madrid", "Paris", "d"]
+       "options": ["London", "Berlin", "Madrid", "Paris", "Pittsburgh"]
    },
    {
        "question": "Which planet is known as the Red Planet?",
