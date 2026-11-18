@@ -1,7 +1,8 @@
 # Get public license data from the City of Chicago's Data Portal
-
+import ssl
 import pandas as pd
 from sodapy import Socrata
+ssl._create_default_https_context = ssl._create_unverified_context
 
 # Create a Sodapy client to access the City of Chicago's Data Portal
 client = Socrata("data.cityofchicago.org", None)

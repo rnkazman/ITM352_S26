@@ -1,12 +1,9 @@
 # Get a JSON file from the City of Chicago's Data Portal and analyze driver types
-
 import pandas as pd
 import requests
 
 # Create a REST query to get the JSON data for driver types
-
 search_results = requests.get("https://data.cityofchicago.org/resource/97wa-y6ff.json?$select=driver_type,count(license)&$group=driver_type")
-
 results_json = search_results.json()
 print("Driver Types and their Counts:")
 print(results_json)
